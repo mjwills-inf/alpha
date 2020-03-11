@@ -1,3 +1,104 @@
-h1 {
-  background-color: rgb(150, 150, 150);
+img.menu-bar {
+  height: 30px;
+  width: 30px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  background-color: rgb(240, 240, 240);
+  /* background image 
+  background-attachment: fixed;
+  background posoition center
+  
+   */
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 100px;
+  background-color: rgb(230, 230, 235);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+header .logo {
+  color: rgb(0, 0, 0);
+  height: 50px;
+  line-height: 50px;
+  font-size: 24px;
+  float: left;
+  font-weight: bold;
+}
+
+header nav {
+  float: right;
+}
+
+header nav ul {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+}
+
+header nav ul li {
+  list-style: none;
+}
+
+header nav ul li a {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: rgb(200, 117, 51);
+  font-size: 14px;
+  display: block;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  color: rgb(202, 109, 33);
+  background-color: rgb(210, 210, 210);
+}
+
+.menu-toggle {
+  float: right;
+  display: none;
+  flex-direction: column;
+  height: 50px;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  /* flex */
+}
+
+@media (max-width: 981px) {
+  header {
+    padding: 0px 20px;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  header nav {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background: rgb(235, 235, 240);
+    top: 50px;
+    left: -100%;
+    transition: 0.5s;
+  }
+  header nav.active {
+    left: 0;
+  }
+  header nav ul {
+    display: block;
+    text-align: center;
+  }
+  header nav ul li a {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
 }
