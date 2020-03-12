@@ -1,6 +1,3 @@
-import test from './jsModules/dropDown';
+import dropDown from './jsModules/dropDownResponsive';
 
-test();
-
-// menu-toggle element class on click
-// classlist.toggle nav with active
+dropDown();
