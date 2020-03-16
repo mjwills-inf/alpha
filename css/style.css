@@ -7,11 +7,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: monospace;
-  background:rgb(240, 240, 240);
-  /* background: url(....)  
-  background-attachment: fixed;
-  background-position: center;  
-   */
+  background:rgb(240, 240, 240); 
 }
 
 header {
@@ -158,7 +154,7 @@ main {
   width: 100%;  
 }
 
-main #container-main{
+main #container-main{                   /*to centre everything (as ^ need absolute)*/
   max-width: 1600px;
   margin: auto;
 }
@@ -177,12 +173,33 @@ h1 {
 /* IMAGE CAROUSEL */
 /* //////////////////////////////////////////////////////////////////////////////// */
 
-#slide-container {
+#slider-area {
   background-color: rgb(200, 117, 51);
+  padding: 50px;
+  position: static; 
 }
 
-#slide-container #left-arrow,
-#slide-container #right-arrow  {
+#slider-area #window {
+  max-width: 770px;
+  margin: auto;
+  /* overflow: hidden; */
+  box-sizing: content-box;
+  border: 3px solid rgb(140, 140, 160);
+}
+
+#slider-area #window #slide {   
+  display: flex;
+  width: 100%;
+  height: 513px;  
+  
+}
+
+
+
+
+
+#slider-area #left-arrow,
+#slider-area #right-arrow  {
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -191,15 +208,13 @@ h1 {
   line-height: 28px;
   font-size: 20px;
   font-weight: 600;
-}
-
-#slide-container #window {
-  
+  cursor: pointer;
 }
 
 #selection-circles {
   width: fit-content;
   margin: auto;
+  cursor: pointer;
 }
 
 #selection-circles span {
