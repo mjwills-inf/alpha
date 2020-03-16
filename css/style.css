@@ -176,51 +176,66 @@ h1 {
 #slider-area {
   background-color: rgb(200, 117, 51);
   padding: 50px;
-  position: static; 
+  position: relative; 
 }
 
 #slider-area #window {
   max-width: 770px;
   margin: auto;
-  /* overflow: hidden; */
+  overflow: hidden;
   box-sizing: content-box;
   border: 3px solid rgb(140, 140, 160);
+  position: relative;
 }
 
 #slider-area #window #slide {   
   display: flex;
   width: 100%;
-  height: 513px;  
-  
+  height: 513px;
+  transition: transform 0.5s ease-in-out;
 }
-
-
-
-
 
 #slider-area #left-arrow,
 #slider-area #right-arrow  {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
   text-align: center;
-  line-height: 28px;
-  font-size: 20px;
+  line-height: 35px;
+  font-size: 25px;
   font-weight: 600;
   cursor: pointer;
+}
+
+#slider-area #left-arrow {
+position: absolute;
+top: 50%;
+left: 5%;
+z-index: 10;
+}
+
+#slider-area #right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  z-index: 10;
 }
 
 #selection-circles {
   width: fit-content;
   margin: auto;
+  margin-top: 20px;
   cursor: pointer;
 }
 
 #selection-circles span {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   border: 1px solid black;
   display: inline-block;
+  margin: 5px;
 }
+
