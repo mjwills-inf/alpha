@@ -6,6 +6,7 @@ const imageSlider = () => {
 
   const imageWidth = 770;
   let arrayCounter = 0;
+  let timerId;
 
   const updateCircles = arrayRef => {
     circles.forEach(node => node.style.removeProperty('background-color'));
@@ -20,6 +21,7 @@ const imageSlider = () => {
     }
     slide.style.transform = `translateX(-${arrayCounter * imageWidth}px)`;
     updateCircles(arrayCounter);
+    timerSlide();
   };
 
   const slideLeft = () => {
@@ -30,12 +32,14 @@ const imageSlider = () => {
     }
     slide.style.transform = `translateX(-${arrayCounter * imageWidth}px)`;
     updateCircles(arrayCounter);
+    timerSlide();
   };
 
   const slideCircle = arrayRef => {
     arrayCounter = Number(arrayRef);
     slide.style.transform = `translateX(-${arrayCounter * imageWidth}px)`;
     updateCircles(arrayCounter);
+    timerSlide();
   };
 
   rightButton.addEventListener('click', slideRight);
@@ -47,6 +51,9 @@ const imageSlider = () => {
     })
   );
 
-  const timerSlide = setTimeout(slideRight, 5000);
+  const timerSlide = () => {
+    clearInterval(timerId);
+    timerId = setInterval(slideRight, 5000);
+  };
 };
 export default imageSlider;
