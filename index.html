@@ -67,11 +67,11 @@
         <div id="title-fluff">
           <h1>&#8734 A Title For A Carousel &#8734</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta veniam culpa ad excepturi impedit quae iure
-            officia pariatur maxime, commodi, aspernatur nam. Repudiandae, vel recusandae non fugiat veniam ipsum iure
-            assumenda asperiores molestias reiciendis hic ipsam atque, distinctio cumque nesciunt, blanditiis tenetur
-            praesentium obcaecati? Magnam quasi, doloribus libero pariatur assumenda doloremque delectus, laboriosam
-            quam quas nisi voluptatum itaque odit qui quibusdam sit officiis ipsa possimus dicta perspiciatis maiores
-            mollitia facere?</p>
+                officia pariatur maxime, commodi, aspernatur nam. Repudiandae, vel recusandae non fugiat veniam ipsum iure
+                assumenda asperiores molestias reiciendis hic ipsam atque, distinctio cumque nesciunt, blanditiis tenetur
+                praesentium obcaecati? Magnam quasi, doloribus libero pariatur assumenda doloremque delectus, laboriosam
+                quam quas nisi voluptatum itaque odit qui quibusdam sit officiis ipsa possimus dicta perspiciatis maiores
+                mollitia facere?</p>
         </div>
 
         <div id="slider-area">
@@ -100,14 +100,14 @@
         <div id="form-area">
           <h1>&#8734 A title For A Browser From &#8734</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minus quidem illo consequuntur, 
-            similique error eos consequatur aut cum, repellendus molestiae, voluptates repudiandae nisi necessitatibus
-             perspiciatis! Animi, hic nam! Aspernatur ab quam fuga repellendus veritatis reprehenderit laudantium sed 
-             amet voluptate.</p>
-          <form novalidate>
+                similique error eos consequatur aut cum, repellendus molestiae, voluptates repudiandae nisi 
+                necessitatibus perspiciatis! Animi, hic nam! Aspernatur ab quam fuga repellendus veritatis reprehenderit laudantium sed 
+                amet voluptate.</p>
+          <form>
             <label for="email">Email:</label>
-            <input type="email" id="email" autocomplete="off" required>
+            <input type="email" id="email" class="validate" autocomplete="off" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required>
             <label for="country">Country:</label>
-            <input type="text" id="country" list="dl1" autocomplete="off" required>
+            <input type="text" id="country" class="validate-country" list="dl1" autocomplete="off" required>
               <datalist id="dl1">
                 <option value="Afganistan">
                 <option value="Albania">
@@ -357,12 +357,12 @@
                 <option value="Zambia">
                 <option value="Zimbabwe">              
               </datalist>
-            <label for="zipcode">Post/Zip Code:</label>
-            <input type="text" id="zipcode" autocomplete="off" required>
+            <label for="zipcode" >Post/Zip Code:</label>
+            <input type="text" id="zipcode" class="validate" autocomplete="off" minlength="2" maxlength="12" required>
             <label for="pass">Password:</label>
-            <input type="password" name="pass" id="pass" autocomplete="off" required>
+            <input type="password" name="pass" id="pass" class="validate" autocomplete="off" minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">                 
             <label for="confirm-pass">Confirm Password:</label>
-            <input type="password" name="confirm-pass" id="confirm-pass" autocomplete="off" required>
+            <input type="password" name="confirm-pass" id="confirm-pass" class="validate-confirm-pass" autocomplete="off" required>
             <button>Submit</button>
           </form>
         </div>

@@ -155,8 +155,8 @@ main {
 }
 
 main #container-main{                   /*to centre everything (as ^ need absolute)*/
-  max-width: 1600px;
-  margin: auto;
+  max-width: 1600px;                    /*problem in that everything else (like footer)*/
+  margin: auto;                         /*-> now needs to sit in container-main*/
 }
 
 h1 {
@@ -279,14 +279,6 @@ form select {
   border-radius: 3px;
 }
 
-form input .invalid {
-  border-right: 10px solid rgb(199, 51, 51);
-}
-
-.valid {
-  border-right: 10px solid rgb(51, 199, 51);
-}
-
 form button {
   display: block;
   padding: 10px 10px 5px;
@@ -300,7 +292,6 @@ form button {
   margin: auto;
   margin-top: 20px;
 }
-
 
 /* //////////////////////////////////////////////////////////////////////////////// */
 /* FOOTER
