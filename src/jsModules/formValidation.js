@@ -1,37 +1,55 @@
 const formValidation = () => {
-  const emailInput = document.querySelector('#email');
-  const countryInput = document.querySelector('#country');
-  const zipcodeInput = document.querySelector('#zipcode');
-  const passInput = document.querySelector('#pass');
-  const passConfInput = document.querySelector('#confirm-pass');
+  const form = document.querySelector('form');
+  form.setAttribute('novalidate', true);
 
-  emailInput.addEventListener('focusout', function() {
-    console.log('emailValidate');
-    if (emailInput.validity.typeMismatch) {
-      emailInput.setCustomValidity('Please use a valid email format');
-      emailInput.reportValidity();
-      emailInput.classList.add('invalid');
-    } else {
-      emailInput.classList.remove('invalid');
-      emailInput.classList.add('valid');
+  const countryCheck = input => {
+    const dataListOptions = document.querySelector('#dl1').options;
+    const optionsArray = Array.from(dataListOptions);
+    if (optionsArray.some(option => option.value === input.value)) {
+      return false;
     }
-  });
+    return 'Please select a valid Country';
+  };
 
-  // /// YERRRR - cant get off field if invalid
+  const passMatch = input => {
+    const passInput = document.querySelector('#pass');
+    console.log(passInput.value);
+    console.log(input.value);
+    if (passInput.value === input.value) {
+      return false;
+    }
+    return 'Ensure Password fields are Identical';
+  };
 
-  countryInput.addEventListener('focusout', function() {
-    console.log('countryValidate');
-  });
+  const whatError = input => {
+    let validity = input.validity;
+    console.log(validity);
+  };
 
-  zipcodeInput.addEventListener('focusout', function() {
-    console.log('zipcodeValidate');
-  });
+  const showError = (errorMessage, input) => {
+    console.log(errorMessage);
+    console.log(input);
+  };
 
-  passInput.addEventListener('focusout', function() {
-    console.log('passValidate');
-  });
-  passConfInput.addEventListener('focusout', function() {
-    console.log('passConfValidate');
+  document.addEventListener('focusout', function(event) {
+    if (event.target.classList.contains('validate-country')) {
+      let errorMessage = countryCheck(event.target);
+      if (errorMessage) {
+        showError(errorMessage, event.target);
+      }
+    }
+    if (event.target.classList.contains('validate-confirm-pass')) {
+      let errorMessage = passMatch(event.target);
+      if (errorMessage) {
+        showError(errorMessage, event.target);
+      }
+    }
+    if (!event.target.classList.contains('validate')) {
+      return;
+    }
+
+    let errorMessage = whatError(event.target);
+    showError(errorMessage, event.target);
   });
 };
 
