@@ -103,7 +103,7 @@
                 similique error eos consequatur aut cum, repellendus molestiae, voluptates repudiandae nisi 
                 necessitatibus perspiciatis! Animi, hic nam! Aspernatur ab quam fuga repellendus veritatis reprehenderit laudantium sed 
                 amet voluptate.</p>
-          <form>
+          <form class="validate">
             <label for="email">Email:</label>
             <input type="email" id="email" class="validate" autocomplete="off" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required>
             <label for="country">Country:</label>
@@ -360,7 +360,7 @@
             <label for="zipcode" >Post/Zip Code:</label>
             <input type="text" id="zipcode" class="validate" autocomplete="off" minlength="2" maxlength="12" required>
             <label for="pass">Password:</label>
-            <input type="password" name="pass" id="pass" class="validate" autocomplete="off" minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">                 
+            <input type="password" name="pass" id="pass" class="validate" autocomplete="off" minlength="8" title="A minimum of 8 characters containing 1 uppercase letter, 1 lowercase letter and 1 number" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required>                 
             <label for="confirm-pass">Confirm Password:</label>
             <input type="password" name="confirm-pass" id="confirm-pass" class="validate-confirm-pass" autocomplete="off" required>
             <button>Submit</button>

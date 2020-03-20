@@ -293,6 +293,19 @@ form button {
   margin-top: 20px;
 }
 
+form input:focus {
+  background-color: rgb(208, 214, 241);
+}
+
+form .error {
+  border: 2px solid rgb(202, 67, 33);
+}
+
+form .error-message {
+  width: 400px;
+  padding: 10px 10px 5px; 
+  color: rgb(202, 53, 33)
+}
 /* //////////////////////////////////////////////////////////////////////////////// */
 /* FOOTER
 /* //////////////////////////////////////////////////////////////////////////////// */
